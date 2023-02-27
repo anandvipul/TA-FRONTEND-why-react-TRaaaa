@@ -1,0 +1,15 @@
+.hero {
+  height: 200px;
+  background: linear-gradient(90deg, black, white, black);
+}
+
+h3 {
+  text-align: center;
+  line-height: 200px;
+  text-transform: uppercase;
+  /* color: red; */
+  letter-spacing: 10px;
+  transform: scale(2, 3);
+  width: fit-content;
+  margin: 0 auto;
+}
