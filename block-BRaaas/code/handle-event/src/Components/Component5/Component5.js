@@ -4,7 +4,7 @@ function eventHandle(item) {
   alert(`Hello ${item}`);
 }
 
-class Component4 extends React.Component {
+class Component5 extends React.Component {
   // eslint-disable-next-line no-useless-constructor
   constructor(props) {
     super(props);
@@ -22,10 +22,10 @@ function momponent3() {
         return (
           <button
             onClick={() => {
-              eventHandle(item);
+              eventHandle(item.id);
             }}
           >
-            {item}
+            {item.value}
           </button>
         );
       })}
@@ -33,4 +33,4 @@ function momponent3() {
   );
 }
 
-export default Component4;
+export default Component5;
