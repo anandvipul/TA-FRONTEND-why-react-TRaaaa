@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                    <title>Card - React</title>
+                    <script crossorigin="crossorigin" src="https://unpkg.com/react@18/umd/react.development.js"></script>
+                    <script crossorigin="crossorigin" src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+                    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+                    <link rel="stylesheet" href="style.css"></head>
+                    <body>
+                        <div class="root" id="root"></div>
+
+                        <script type="text/babel">
+                            let cardInfo = {                                 title: 'City Lights in New York',
+                                                        date: new Date('2017-01-26'),
+                                                        comments: 67,
+                                                        subTitle: 'The city that never sleeps.',
+                                                        description:
+                                                        'New York, the largest city in the U.S., is an architectural marvel with plenty of historic monuments, magnificent buildings and countless dazzling skyscrapers.',
+                                                        category: 'photos',
+                                                        imageURL:
+                                                        'https://images.unsplash.com/photo-1610874933184-7728fd666162?ixid=MXwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwzfHx8ZW58MHx8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60',
+                                                        };
+                                                        let monthNames = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'October', 'November', 'December'];
+                                                        
+                                                        let Card = (props) => {
+                                                        console.log(props);
+                                                        return (<>
+                                <div class="card">
+                                    <div className="header">
+                                        <div className="date">
+                                            <span className="date-day">{props.cardInfo.date.getDate()}</span>
+                                            <span className="date-month">{monthNames[props.cardInfo.date.getMonth()].slice(0,3)}</span>
+                                        </div>
+                                        <img src={props.cardInfo.imageURL}/>
+                                        <div className="photos">{props.cardInfo.category}</div>
+                                    </div>
+                                    <div className="description">
+                                        <h1>{props.cardInfo.title}</h1>
+                                        <h3>{props.cardInfo.subTitle}</h3>
+                                        <p>{props.cardInfo.description}</p>
+                                    </div>
+                                    <div className="footer">
+
+                                        <span className="time">06
+                                            <span>mins ago</span>
+                                        </span>
+                                        <span className="comments">39
+                                            <span>comments</span>
+                                        </span>
+
+                                    </div>
+                                </div>
+                            </>);
+                                                        }
+                                                        
+                                                        let ui =(<>
+                                <h1>Components</h1>
+                                <div className="container">
+                                    <Card cardInfo={cardInfo}/>
+                                    <Card cardInfo={cardInfo}/>
+                                    <Card cardInfo={cardInfo}/></div>
+                            </>
+                            );
+                                                        
+                                                        // ReactDOM.render(ui, document.querySelector(".root"));
+                                                        let root =  ReactDOM.createRoot(document.querySelector("#root"));
+                                                        root.render(ui);
+
+
+                        </script>
+                    </body>
+                </html>
