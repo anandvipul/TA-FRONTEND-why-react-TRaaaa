@@ -1,0 +1,16 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1rem 0;
+}
+
+nav a {
+  margin-right: 2rem;
+  text-decoration: none;
+  color: inherit;
+}
+
+nav a::after {
+  margin-right: 0;
+}
